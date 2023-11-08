@@ -1,0 +1,14 @@
+{
+  "quoteMark": "single",
+  "maxLineLength": 0,
+  "groupRules": [
+    "^react(-dom)?$",
+    "^@angular/",
+    "^vue$",
+    "^node:",
+    {},
+    "^@[^\/]",
+    "^@/",
+    "^[.]"
+  ]
+}

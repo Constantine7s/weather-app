@@ -1,0 +1,50 @@
+{
+  "name": "weather-app",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "fix-code": "prettier-eslint --write 'packages/**/src/**/*.{js,jsx}'",
+    "test:web": "yarn workspace web run test",
+    "web": "yarn workspace web start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "plugin:flowtype/recommended",
+      "react-app"
+    ],
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype",
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    "settings": {
+      "flowtype": {
+        "onlyFilesWithFlowAnnotation": true
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-react-app": "3.0.8",
+    "eslint-plugin-flowtype": "3.4.2",
+    "eslint-plugin-import": "2.16",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "1.6.0",
+    "prettier": "1.18.0",
+    "prettier-eslint": "8.8.2",
+    "prettier-eslint-cli": "4.7.1"
+  }
+}
