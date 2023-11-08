@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import Main from './containers/Main';
+import currentWeatherData from '../../../data/currentWeather.json'
+import weatherForecastData from '../../../data/weatherForecast.json';
 
-//use context api here
-  //current weather
-  //hourly forecast
+const WeatherContext = createContext();
+
+const WeatherProvider = ({ children }) => {
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [hourlyForecast, setHourlyForecast] = useState(null);
+
+  useEffect(() => {
+    setCurrentWeather(currentWeatherData);
+    setHourlyForecast(weatherForecastData);
+  }, []);
+
+  return (
+    <WeatherContext.Provider value={{ currentWeather, hourlyForecast }}>
+      {children}
+    </WeatherContext.Provider>
+  );
+};
 
 const App = (props) => {
-  //wrap in context provider
-  return <Main/>;
+  return (
+    <WeatherProvider>
+      <Main />
+    </WeatherProvider>
+  );
 };
 
 export default App;
