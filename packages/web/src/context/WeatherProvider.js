@@ -12,9 +12,9 @@ const WeatherProvider = ({ children }) => {
   useEffect(() => {
     setCurrentWeather(currentWeatherData);
     setHourlyForecast(weatherForecastData);
-}, []);
+  }, []);
 
-    return (
+  return (
      <WeatherContext.Provider value={{ currentWeather, hourlyForecast }}>
       {children}
     </WeatherContext.Provider>

@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
-// import { fromJS, List } from 'immutable';
+import React from 'react';
 import styled from 'styled-components';
 
 import Header from '@/components/Header';
+import CurrentWeather from '@/components/CurrentWeather';
+import Forecast from '@/components/Forecast';
 
 const MainContainer = styled.div`
-  height: 100vh;
   display: grid;
   justify-content: center;
   align-content: center;
 `;
 
-const Main = (props) => {
+const Main = () => {
   return <MainContainer>
     <Header/>
+    <CurrentWeather/>
+    <Forecast/>
   </MainContainer>;
 };
 

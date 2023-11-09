@@ -2,7 +2,7 @@ import React from 'react';
 import { WeatherState } from '../context/WeatherProvider'
 
 const Header = () => {
-  const {currentWeather} = WeatherState();
+  const { currentWeather } = WeatherState();
 
   return (
     <header>
