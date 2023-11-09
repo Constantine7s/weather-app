@@ -1,20 +1,24 @@
-import React from 'react';
-import WeatherTile from './WeatherTile'; // Assuming this is your WeatherTile component
+import React, { useMemo } from 'react';
+import WeatherTile from './WeatherTile'; 
 import { WeatherState } from '../context/WeatherProvider'
 
 const Forecast = () => {
   const { hourlyForecast } = WeatherState(); 
 
+  const twentyFourHourForecast = useMemo(() => {
+    return hourlyForecast ? hourlyForecast.list.slice(0, 8) : [];
+  }, [hourlyForecast]); 
+
   return (
-    <span>
-      {hourlyForecast ? (
-        hourlyForecast.list.slice(0, 8).map((weather, index) => (
-          <WeatherTile key={index} time={weather.dt_txt} temperature={weather.main.temp} />
+    <div>
+      {twentyFourHourForecast.length > 0 ? (
+        twentyFourHourForecast.map((weather, index) => (
+          <WeatherTile key={index} time={weather.dt_txt} temperature={weather.main.temp} icon={weather.weather[0].icon} />
         ))
       ) : (
         <p>Weather data loading...</p>
       )}
-    </span>
+    </div>
   );
 };
 
