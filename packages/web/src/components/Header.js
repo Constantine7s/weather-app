@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   align-items: center;
   padding-top: 1rem;
   z-index:0;
+  margin-bottom: 0;
 `;
 
 const Title = styled.h1`
@@ -35,6 +36,7 @@ const Description = styled.h3`
 `;
 
 const LoadingText = styled.p`
+  font-size: 2.5rem;
 `;
 
 const SearchIcon = styled.i`
@@ -50,7 +52,7 @@ const RoundedDiv = styled.div`
   margin: 0 auto;
   border-radius: 50%;
   height: 40rem; 
-  width: 125%;
+  width: 140%;
   z-index: -1;
   position: absolute; 
   margin-top: -210px;
