@@ -1,19 +1,20 @@
 import React from 'react';
 
-const WeatherTile = ({ time, temperature }) => {
+const WeatherTile = ({ time, temperature, icon }) => {
 
   const date = new Date(time);
   const displayTime = date.toLocaleTimeString('en-GB', {
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false
+    hour12: false,
   });
   const displayTemperature = `${Math.round(temperature)}°C`;
 
   return (
-    <div className="weather-tile">
+    <div>
       <p>{displayTime}</p>
-      <p>{displayTemperature}</p>
+      <img src={`https://openweathermap.org/img/wn/${icon}.png`} alt="weather icon" />
+      <p>{displayTemperature} {icon}</p>
     </div>
   );
 };
