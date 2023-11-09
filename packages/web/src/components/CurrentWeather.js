@@ -14,7 +14,7 @@ const WeatherContainer = styled.div`
 `;
 
 const TemperatureInfo = styled.h2`
-  font-size: 7rem;
+  font-size: 7.25rem;
   font-weight: 500;
   color: #0a1128;
   z-index: 100;
@@ -32,7 +32,7 @@ const InfoBlock = styled.div`
 const InfoText = styled.p`
   font-size: 2.5rem;
   color: #0a1128;
-  margin-top: 5px;
+  margin-top: 2px;
   margin-bottom: 0;
 `;
 
