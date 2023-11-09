@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
+import WeatherTile from './WeatherTile'; // Assuming this is your WeatherTile component
+import { WeatherState } from '../context/WeatherProvider'
 
-function Forecast() {
+const Forecast = () => {
+  const { hourlyForecast } = WeatherState(); 
+
   return (
-    <div>Forecast</div>
-  )
-}
+    <span>
+      {hourlyForecast ? (
+        hourlyForecast.list.slice(0, 8).map((weather, index) => (
+          <WeatherTile key={index} time={weather.dt_txt} temperature={weather.main.temp} />
+        ))
+      ) : (
+        <p>Weather data loading...</p>
+      )}
+    </span>
+  );
+};
 
-export default Forecast
+export default Forecast;
