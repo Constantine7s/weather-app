@@ -28,7 +28,7 @@ const Forecast = () => {
           <WeatherTile key={index} time={weather.dt_txt} temperature={weather.main.temp} icon={weather.weather[0].icon} />
         ))
       ) : (
-        <p>Weather data loading...</p>
+        null
       )}
     </ScrollContainer>
   );

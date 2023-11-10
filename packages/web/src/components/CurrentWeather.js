@@ -62,7 +62,7 @@ const CurrentWeather = () => {
           <TemperatureTile title="Max" temp={currentWeather.main.temp_max} />
         </>
       ) : (
-        <p>Current weather data loading...</p>
+        null
       )}
     </WeatherContainer>
   );
