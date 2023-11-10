@@ -7,10 +7,8 @@ const ScrollContainer = styled.div`
   display: flex;
   justify-content: space-between;
   overflow-x: auto;
+  margin-top: 1rem;
   width: 95%; 
-  max-width: 100%; 
-  box-sizing: border-box;
-  white-space: nowrap;
   &::-webkit-scrollbar {
     display: none;
   }
