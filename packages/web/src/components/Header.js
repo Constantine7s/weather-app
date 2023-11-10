@@ -1,6 +1,6 @@
 import React from 'react';
-import { WeatherState } from '../context/WeatherProvider';
 import styled from 'styled-components';
+import { WeatherState } from '../context/WeatherProvider';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -74,7 +74,7 @@ const Header = () => {
             title={currentWeather.weather[0].description}
             />
         </>
-      ) : (
+        ) : (
         <LoadingText>Loading weather data...</LoadingText>
         )}
     </StyledHeader>

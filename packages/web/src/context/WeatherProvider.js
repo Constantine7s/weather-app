@@ -21,7 +21,6 @@ const WeatherProvider = ({ children }) => {
         console.error("Error fetching weather data:", error);
       }
     };
-    
 
     fetchWeatherData();
   }, []);

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import WeatherTile from './WeatherTile'; 
+import WeatherTile from './WeatherTile';
 import { WeatherState } from '../context/WeatherProvider';
 
 const ScrollContainer = styled.div`
@@ -15,11 +15,11 @@ const ScrollContainer = styled.div`
 `;
 
 const Forecast = () => {
-  const { hourlyForecast } = WeatherState(); 
+  const { hourlyForecast } = WeatherState();
 
   const twentyFourHourForecast = useMemo(() => {
     return hourlyForecast ? hourlyForecast.list.slice(0, 8) : [];
-  }, [hourlyForecast]); 
+  }, [hourlyForecast]);
 
   return (
     <ScrollContainer>
