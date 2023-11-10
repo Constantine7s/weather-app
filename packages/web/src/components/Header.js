@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   align-items: center;
   padding-top: 1rem;
   z-index:0;
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 const Title = styled.h1`
@@ -49,13 +49,12 @@ const SearchIcon = styled.i`
 
 const RoundedDiv = styled.div`
   background-color: #ffffff;
-  margin: 0 auto;
   border-radius: 50%;
   height: 40rem; 
   width: 140%;
   z-index: -1;
   position: absolute; 
-  margin-top: -210px;
+  margin-top: -200px;
 `;
 
 const Header = () => {
