@@ -1,6 +1,20 @@
 import React, { useMemo } from 'react';
+import styled from 'styled-components';
 import WeatherTile from './WeatherTile'; 
-import { WeatherState } from '../context/WeatherProvider'
+import { WeatherState } from '../context/WeatherProvider';
+
+const ScrollContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  width: 95%; 
+  max-width: 100%; 
+  box-sizing: border-box;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const Forecast = () => {
   const { hourlyForecast } = WeatherState(); 
@@ -10,7 +24,7 @@ const Forecast = () => {
   }, [hourlyForecast]); 
 
   return (
-    <div>
+    <ScrollContainer>
       {twentyFourHourForecast.length > 0 ? (
         twentyFourHourForecast.map((weather, index) => (
           <WeatherTile key={index} time={weather.dt_txt} temperature={weather.main.temp} icon={weather.weather[0].icon} />
@@ -18,7 +32,7 @@ const Forecast = () => {
       ) : (
         <p>Weather data loading...</p>
       )}
-    </div>
+    </ScrollContainer>
   );
 };
 
