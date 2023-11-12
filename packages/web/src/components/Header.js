@@ -1,6 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled,  { keyframes } from 'styled-components';
 import { WeatherState } from '../context/WeatherProvider';
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -12,6 +23,7 @@ const StyledHeader = styled.header`
   padding-top: 1rem;
   z-index:0;
   margin: 0;
+  animation: ${slideDown} 0.8s ease-out forwards;
 `;
 
 const Title = styled.h1`

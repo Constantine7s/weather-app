@@ -1,7 +1,16 @@
 import React, { useMemo } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import WeatherTile from './WeatherTile';
 import { WeatherState } from '../context/WeatherProvider';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const ScrollContainer = styled.div`
   display: flex;
@@ -11,7 +20,10 @@ const ScrollContainer = styled.div`
   width: 95%; 
   &::-webkit-scrollbar {
     display: none;
-  }
+  };
+  opacity:0;
+  animation: ${fadeIn} 1s ease-in-out forwards;
+  animation-delay: 0.6s;
 `;
 
 const Forecast = () => {

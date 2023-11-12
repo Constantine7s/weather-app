@@ -1,7 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { WeatherState } from '../context/WeatherProvider';
 import TemperatureTile from './TemperatureTile';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const WeatherContainer = styled.div`
   display: grid;
@@ -10,7 +19,10 @@ const WeatherContainer = styled.div`
   align-items: center;
   gap: 0 40px;
   margin-top: 0px;
+  opacity:0;
   width: 90%;
+  animation: ${fadeIn} 1s ease-in-out forwards;
+  animation-delay: 0.5s;
 `;
 
 const TemperatureInfo = styled.h2`
